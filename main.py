@@ -3,10 +3,8 @@ def get_book_text(book_title):
         book_contents = b.read()
     return book_contents
 
-def main():
-    book = get_book_text("frankenstein.txt")
-    words = book.split()
-    count = len(words)
-    print(f"{count} words found in the document")
+from stats import get_num_words
 
-main()
+title = get_book_text("frankenstein.txt")
+
+get_num_words(title)
