@@ -9,6 +9,19 @@ title = get_book_text("frankenstein.txt")
 
 from stats import get_char_count
 
-get_num_words(title)
+from stats import sorted_chars
 
-get_char_count(title)
+char_count_dict = get_char_count(title)
+sorted_list_of_chars = sorted_chars(char_count_dict)
+
+
+print("============ BOOKBOT ============")
+print("Analyzing book found at books/frankenstein.txt...")
+print("----------- Word Count ----------")
+print(f"Found {get_num_words(title)} total words")
+print("--------- Character Count -------")
+for item in sorted_list_of_chars:
+    count = item["num"]
+    character = item["char"]
+    print(f"{character}: {count}")
+print("============= END ===============")

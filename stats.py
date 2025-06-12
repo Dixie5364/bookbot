@@ -1,7 +1,7 @@
 def get_num_words(book):
     words = book.split()
     count = len(words)
-    print(f"{count} words found in the document")
+    return count
 
 def get_char_count(book):
     words = book.lower()
@@ -12,4 +12,15 @@ def get_char_count(book):
             continue
         else:
             total[char] = 1
-    print(total)
+    return total
+
+def sorted_chars(dict):
+    sorts = []
+    for character, count in dict.items():
+        if character.isalpha():
+            new_list = {"char": character, "num": count}
+            sorts.append(new_list)
+        else:
+            continue
+    sorts.sort(reverse=True, key=lambda dict: dict["num"])
+    return sorts
